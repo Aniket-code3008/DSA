@@ -1,0 +1,19 @@
+Ques ;- Given a square matrix of size N x N. The task is to rotate it by 90 degrees in anti-clockwise direction without using any extra space. 
+
+Solution ;- 
+
+void rotateby90(vector<vector<int> >& matrix, int n) 
+    { 
+        //transpose of a matrix
+        for(int i=0; i<n; i++){
+            for(int j =0; j<i;j++){
+                swap(matrix[i][j],matrix[j][i]);
+            }
+        }
+        //swapping of rows
+        for(int i =0; i<(n/2);i++){
+            for(int j=0; j<n;j++){
+                swap(matrix[i][j],matrix[n-1-i][j]);
+            }
+        }
+    } 
